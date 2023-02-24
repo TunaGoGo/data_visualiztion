@@ -48,10 +48,12 @@ def build_county_to_state_figure(df: pd.DataFrame):
 
 def build_state_lat_lng_figure(df: pd.DataFrame):
     # px.set_mapbox_access_token(open(".mapbox_token").read())
-    fig = px.scatter_geo(df,
-                        lat=df.lat,
-                        lon=df.lon,
-                        hover_name="name")
+    fig = px.scatter_mapbox(df,
+                        lat='lat',
+                        lon='lon',
+                        hover_name='name',
+                        color_discrete_sequence=["fuchsia"], zoom=3, height= 500)
+    fig.update_layout(mapbox_style="open-street-map")
     fig.update_layout(
         title = 'Covid impact in US<br>(Hover for state names)',
         geo_scope='usa',
