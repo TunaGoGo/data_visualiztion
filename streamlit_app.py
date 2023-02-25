@@ -132,7 +132,7 @@ def render_plotly_ui(transformed_df: pd.DataFrame) -> Dict:
         size_to_time_clicked = plotly_events(
             size_to_time_figure,
             click_event=True,
-            key=f"size_to_time_{st.session_state.counter}",
+            key=f"size_to_time_{6}",
         )
         day_clicked = plotly_events(
             day_figure,
